@@ -41,7 +41,7 @@
  - 一般默认的源配置里面 [base], [updates], [extras]，[centosplus] 的 priority=1， [contrib] 的 priority=2，其他第三的软件源为：priority=N （推荐 N > 10，N 可以为1到99的正整数，数值越小越优先）
  - `sudo vim /etc/yum.repos.d/CentOS-Base.repo`
  - 配置内容如下图
- - ![CentOS 默认源的级别设置](../images/CentOS-Extra-Packages-a-1.jpg)
+ ![CentOS 默认源的级别设置](../images/CentOS-Extra-Packages-a-1.jpg)
  
 - 安装 EPEL 源：
  - 官网中文材料：<https://fedoraproject.org/wiki/EPEL/zh-cn>
@@ -58,7 +58,7 @@
  - 安装 RPM 文件：`sudo rpm -ivh rpmforge-release-0.5.3-1.el6.rf.x86_64.rpm`
  - 导入 KEY：`sudo rpm --import /etc/pki/rpm-gpg/RPM-GPG-KEY-rpmforge-dag`
  - 设置 RepoForge 源的级别：`vim  /etc/yum.repos.d/rpmforge.repo`，设置如下图
- - ![RepoForge 源的级别设置](../images/CentOS-Extra-Packages-a-2.jpg)
+ ![RepoForge 源的级别设置](../images/CentOS-Extra-Packages-a-2.jpg)
  
 - 更新包信息：
  - `sudo yum clean all`
@@ -73,9 +73,9 @@
 
 > 资料：
 
-- <https://wiki.centos.org/zh/PackageManagement/Yum/Priorities>
-- <http://www.cnblogs.com/Security-Darren/p/3947952.html>
-- <http://freeloda.blog.51cto.com/2033581/1260824>
-- <http://www.centoscn.com/CentOS/config/2014/0920/3793.html>  
-- <http://www.cnblogs.com/mchina/archive/2013/01/04/2842275.html>
-- <http://www.ha97.com/2626.html>
+- [https://wiki.centos.org/zh/PackageManagement/Yum/Priorities](https://wiki.centos.org/zh/PackageManagement/Yum/Priorities)
+- [http://www.cnblogs.com/Security-Darren/p/3947952.html](http://www.cnblogs.com/Security-Darren/p/3947952.html)
+- [http://freeloda.blog.51cto.com/2033581/1260824](http://freeloda.blog.51cto.com/2033581/1260824)
+- [http://www.centoscn.com/CentOS/config/2014/0920/3793.html](http://www.centoscn.com/CentOS/config/2014/0920/3793.html)  
+- [http://www.cnblogs.com/mchina/archive/2013/01/04/2842275.html](http://www.cnblogs.com/mchina/archive/2013/01/04/2842275.html)
+- [http://www.ha97.com/2626.html](http://www.ha97.com/2626.html)

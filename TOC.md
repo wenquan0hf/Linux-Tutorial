@@ -29,7 +29,6 @@
 - [Mysql 安装和配置](Mysql-Install-And-Settings.md)
 - [Redis 安装和配置](Redis-Install-And-Settings.md)
 - [Jira 安装和配置](Jira-Install-And-Settings.md)
-- [Jenkins 安装和配置](Jenkins-Install-And-Settings.md)
 - [TeamCity 安装和配置](TeamCity-Install-And-Settings.md)
 - [Nginx 安装和配置](Nginx-Install-And-Settings.md)
 - [黑客入侵检查](Was-Hacked.md)

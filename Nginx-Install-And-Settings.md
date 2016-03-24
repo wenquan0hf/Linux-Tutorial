@@ -1,6 +1,5 @@
 # Nginx 安装和配置
 
-
 ## Nginx 说明
 
 - Nginx 是一个很强大的高性能 Web 和反向代理服务器，常被我们用作负载均衡服务器，也可以作为邮件代理服务器
@@ -14,7 +13,6 @@
     - 优先：<https://www.nginx.com/resources/wiki/>
     - 次要：<http://nginx.org/en/docs/>
 - Nginx 模块地址：<https://www.nginx.com/resources/wiki/modules/>
-
 
 ## 来自网络上的一个好介绍
 
@@ -47,20 +45,20 @@
 ## Nginx 源码编译安装
 
 - 官网下载最新稳定版本 **1.8.1**，大小：814K
-- 官网安装说明：<https://www.nginx.com/resources/wiki/start/topics/tutorials/install/>
+- 官网安装说明：[https://www.nginx.com/resources/wiki/start/topics/tutorials/install/](https://www.nginx.com/resources/wiki/start/topics/tutorials/install/)
 - 源码编译配置参数说明：
-    - <https://www.nginx.com/resources/wiki/start/topics/tutorials/installoptions/>
-    - <http://nginx.org/en/docs/configure.html>
+    - [https://www.nginx.com/resources/wiki/start/topics/tutorials/installoptions/](https://www.nginx.com/resources/wiki/start/topics/tutorials/installoptions/)
+    - [http://nginx.org/en/docs/configure.html](http://nginx.org/en/docs/configure.html)
 - 开始安装：
     - 安装依赖包：`yum install -y gcc gcc-c++ pcre pcre-devel zlib zlib-devel openssl openssl-devel`
     - 预设几个文件夹，方便等下安装的时候有些文件可以进行存放：
         - `mkdir -p /usr/local/nginx /var/log/nginx /var/temp/nginx`
-    - 下载源码包：``wget http://nginx.org/download/nginx-1.8.1.tar.gz`
+    - 下载源码包：`wget http://nginx.org/download/nginx-1.8.1.tar.gz`
     - 解压：`tar zxvf nginx-1.8.1.tar.gz`
     - 进入解压后目录：`cd nginx-1.8.1/`
     - 编译配置：
 
-    ``` ini
+    ```ini
     ./configure \
     --prefix=/usr/local/nginx \
     --pid-path=/var/local/nginx/nginx.pid \
@@ -99,7 +97,6 @@
     - 检查 Nginx 启用的配置文件是哪个：`/usr/local/nginx/sbin/nginx -t`
     - 刷新 Nginx 配置后重启：`/usr/local/nginx/sbin/nginx -s reload`
     - 停止 Nginx：`/usr/local/nginx/sbin/nginx -s stop`
-
 
 ## Nginx 配置
 
@@ -245,7 +242,6 @@ http {
 }
 ```
 
-
 ### 反向代理和负载均衡
 
 - 最精简的环境：一台虚拟机
@@ -295,8 +291,7 @@ http {
 
 ### HTTP 服务，绑定多个域名
 
-- <https://www.ttlsa.com/nginx/use-nginx-proxy/>
-
+- [https://www.ttlsa.com/nginx/use-nginx-proxy/](https://www.ttlsa.com/nginx/use-nginx-proxy/)
 
 ### 安装第三方模块
 
@@ -304,51 +299,50 @@ http {
 
 ### 启用 Gzip 压缩
 
-
 ### 防盗链
 
-- <https://help.aliyun.com/knowledge_detail/5974693.html?spm=5176.788314853.2.18.s4z1ra>
-
+- [https://help.aliyun.com/knowledge_detail/5974693.html?spm=5176.788314853.2.18.s4z1ra](https://help.aliyun.com/knowledge_detail/5974693.html?spm=5176.788314853.2.18.s4z1ra)
 
 ### Nginx 禁止特定用户代理（User Agents）访问，静止指定 IP 访问
 
-- <https://www.ttlsa.com/nginx/how-to-block-user-agents-using-nginx/>
-- <https://help.aliyun.com/knowledge_detail/5974693.html?spm=5176.788314853.2.18.s4z1ra>
-- <>
-- <>
-- <>
+- [https://www.ttlsa.com/nginx/how-to-block-user-agents-using-nginx/](https://www.ttlsa.com/nginx/how-to-block-user-agents-using-nginx/)
+- [https://help.aliyun.com/knowledge_detail/5974693.html?spm=5176.788314853.2.18.s4z1ra](https://help.aliyun.com/knowledge_detail/5974693.html?spm=5176.788314853.2.18.s4z1ra)
 
 ### Nginx 缓存
 
-
 ### Nginx 自动分割日志文件
 
-
-
 ### Nginx 处理跨域请求
-
 
 ### 安全相预防
 
 
 在配置文件中设置自定义缓存以限制缓冲区溢出攻击的可能性
+
+```
 client_body_buffer_size 1K;
 client_header_buffer_size 1k;
 client_max_body_size 1k;
 large_client_header_buffers 2 1k;
+```
 
-7. 将timeout设低来防止DOS攻击
+7.将timeout设低来防止DOS攻击
+
 所有这些声明都可以放到主配置文件中。
+
+```
 client_body_timeout 10;
 client_header_timeout 10;
 keepalive_timeout 5 5;
 send_timeout 10;
+```
 
+8.限制用户连接数来预防DOS攻击
 
-8. 限制用户连接数来预防DOS攻击
+```
 limit_zone slimits $binary_remote_addr 5m;
 limit_conn slimits 5;
-
+```
 
 
 ### 杂七杂八
@@ -356,25 +350,9 @@ limit_conn slimits 5;
 - [nginx实现简体繁体字互转以及中文转拼音](https://www.ttlsa.com/nginx/nginx-modules-ngx_set_cconv/)
 - [nginx记录分析网站响应慢的请求(ngx_http_log_request_speed)](https://www.ttlsa.com/nginx/nginx-modules-ngx_http_log_request_speed/)
 - [nginx空白图片(empty_gif模块)](https://www.ttlsa.com/nginx/nginx-modules-empty_gif/)
-- []()
-- []()
-- []()
-- []()
-- []()
-- []()
-- []()
-
-
 
 ## 资料
 
-- <https://help.aliyun.com/knowledge_detail/5974693.html?spm=5176.788314853.2.18.s4z1ra>
-- <>
-- <>
-- <>
-- <>
-- <>
-- <>
-- <>
-- <>
+- [https://help.aliyun.com/knowledge_detail/5974693.html?spm=5176.788314853.2.18.s4z1ra](https://help.aliyun.com/knowledge_detail/5974693.html?spm=5176.788314853.2.18.s4z1ra)
+
 
